@@ -14,6 +14,10 @@ class snakeClass():
         self.fruitCoords = self.fruit()
         self.loop = True
         self.extend = False
+<<<<<<< HEAD
+=======
+        self.waitTime = .4
+>>>>>>> f4abc1ec985112bbb9358caf3614c0e668629e6e
 
     def printBoard(self, board):
         print("\n")
@@ -60,7 +64,14 @@ class snakeClass():
             self.extend = True
     
     def gameLoop(self):
+<<<<<<< HEAD
         while self.loop:
+=======
+        key = ""
+        #previousKey = ""
+        while self.loop:
+            if key != "": previousKey = key 
+>>>>>>> f4abc1ec985112bbb9358caf3614c0e668629e6e
             key = ""
             if msvcrt.kbhit(): key = msvcrt.getch().decode('utf-8')
 
@@ -69,12 +80,26 @@ class snakeClass():
             elif key == "d": self.direction = 1
             elif key == "s": self.direction = 2
             elif key == "a": self.direction = 3
+<<<<<<< HEAD
+=======
+            elif key == "=" or key == "+": self.waitTime = self.waitTime + .05
+            elif key == "-" or key == "_": self.waitTime = self.waitTime - .05
+            
+            #print([previousKey, key])
+            #time.sleep(.5)
+            #if "w" in [previousKey, key] and "s" in [previousKey, key]: key = previousKey
+            #elif "a" in [previousKey, key] and "d" in [previousKey, key]: key = previousKey
+>>>>>>> f4abc1ec985112bbb9358caf3614c0e668629e6e
 
             self.move(self.direction)
             self.collisions()
             self.drawCoords()
 
+<<<<<<< HEAD
             time.sleep(.4)
+=======
+            time.sleep(self.waitTime)
+>>>>>>> f4abc1ec985112bbb9358caf3614c0e668629e6e
 
 def endScreen():
     global score
